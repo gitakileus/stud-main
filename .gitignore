@@ -1,0 +1,16 @@
+.idea
+venv/
+__pycache__/
+
+db.sqlite3
+*.dump
+
+.env
+.cache/
+.viminfo
+.ssh
+
+static/
+media/
+backups/
+Lib

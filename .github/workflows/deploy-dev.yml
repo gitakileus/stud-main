@@ -1,0 +1,23 @@
+name: Deploy dev
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  start:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          comment: Deploy the dev branch
+          script: cd /var/www/stud && /bin/bash ./deploy.sh

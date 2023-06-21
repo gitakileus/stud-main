@@ -1,0 +1,7 @@
+{% autoescape off %}
+Hi {{ user.username }},
+
+Please click the following link to activate your account:
+
+http://{{ domain }}?token={{ token }}&email={{ user.email }}
+{% endautoescape %}
